@@ -48,6 +48,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Setup Java JDK
+      uses: actions/setup-java@v3.13.0
+      with:
+    # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
+        java-version: 16
+    # Java distribution. See the list of supported distributions in README file
+        distribution:  'microsoft'
+    
+
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
@@ -59,12 +68,6 @@ jobs:
 
         # For more details on CodeQL's query packs, refer to: https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
         # queries: security-extended,security-and-quality
-
-    - name: setupjava
-      uses: actions/setup-java@v3
-      with:
-         java-version: 16
-         distribution: 'microsoft'
 
     # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).
     # If this step fails, then you should remove it and run the build manually (see below)
