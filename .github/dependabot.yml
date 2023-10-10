@@ -12,7 +12,7 @@ updates:
     labels:
       - "triage-required"
     assignees:
-      - "dungeonstechlead"
+      - "ruthhdz"
     reviewers:
       - "dragonsengineer"
     commit-message:
